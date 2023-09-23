@@ -8,7 +8,7 @@ function renderTodo(todo) {
     return;
   }
   const isChecked = todo.checked ? "done" : "";
-
+  
   const newlist = document.createElement("li");
 
   newlist.setAttribute("class", `todo-item ${isChecked}`);
