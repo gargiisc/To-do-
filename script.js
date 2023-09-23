@@ -1,17 +1,12 @@
-
 let arr = [];
 function renderTodo(todo) {
   localStorage.setItem("arr", JSON.stringify(arr));
-
-
   const list = document.querySelector(".todo-list");
   const item = document.querySelector(`[data-key='${todo.id}']`);
-
   if (todo.deleted) {
     item.remove();
     return;
   }
-
   const isChecked = todo.checked ? "done" : "";
 
   const newlist = document.createElement("li");
@@ -29,27 +24,21 @@ function renderTodo(todo) {
         </svg>
     </button>
 `;
-
   if (item) {
     list.replaceChild(newlist, item);
   } else {
     list.append(newlist);
   }
-
 }
-
 function myFunction(x) {
   const todoobject = {
     x,
     checked: false,
     id: Date.now(),
   };
-
   arr.push(todoobject);
-
   renderTodo(todoobject);
   console.log(arr);
-
 }
 
 function toggleDone(b) {
